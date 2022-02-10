@@ -1,0 +1,30 @@
+{
+  "name": "md-gulp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/droom/md-gulp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/droom/md-gulp/issues"
+  },
+  "homepage": "https://github.com/droom/md-gulp#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.49.7"
+  },
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "cssnano": "^5.0.17",
+    "gulp-postcss": "^9.0.1",
+    "gulp-terser": "^2.1.0"
+  }
+}
