@@ -11,8 +11,8 @@ const browsersync = require('browser-sync').create();
 // https://github.com/thecodercoder/gulp-browsersync/blob/main/gulpfile.js
 
 // Sass Task
-function scssTask(){
-  return src('app/scss/style.scss', { sourcemaps: true })
+function sassTask(){
+  return src('app/sass/style.sass', { sourcemaps: true })
     .pipe(sass())
     .pipe(postcss([cssnano()]))
     .pipe(dest('dist', { sourcemaps: '.' }));
@@ -43,12 +43,12 @@ function browsersyncReload(cb){
 // Watch Task
 function watchTask(){
   watch('*.html', browsersyncReload);
-  watch(['app/scss/**/*.scss', 'app/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
+  watch(['app/sass/*.sass', 'app/js/**/*.js'], series(sassTask, jsTask, browsersyncReload));
 }
 
 // Default Gulp task
 exports.default = series(
-  scssTask,
+  sassTask,
   jsTask,
   browsersyncServe,
   watchTask
