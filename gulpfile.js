@@ -6,9 +6,8 @@ const cssnano = require('cssnano');
 const terser = require('gulp-terser');
 const browsersync = require('browser-sync').create();
 
-// Tutorial
-// https://www.youtube.com/watch?v=q0E1hbcj-NI&ab_channel=CoderCoder
-// https://github.com/thecodercoder/gulp-browsersync/blob/main/gulpfile.js
+const nunjucksRender = require('gulp-nunjucks-render');
+var gulp = require('gulp');
 
 // Sass Task
 function sassTask(){
@@ -17,6 +16,20 @@ function sassTask(){
     .pipe(postcss([cssnano()]))
     .pipe(dest('dist', { sourcemaps: '.' }));
 }
+
+// Nunjucks
+
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('app/pages/**/*.+(html|nunjucks)')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['app/templates']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('app'))
+});
+
 
 // JavaScript Task
 function jsTask(){
