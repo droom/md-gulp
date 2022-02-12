@@ -1,0 +1,6 @@
+<!-- index.nunjucks -->
+{% extends "header.nunjucks" %}
+
+{% block content %}
+  <h1>Index page</h1>
+{% endblock %}
