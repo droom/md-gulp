@@ -1,6 +1,6 @@
 <!-- index.nunjucks -->
-{% extends "layout.nunjucks" %}
+{% extends "header.nunjucks" %}
 
 {% block content %}
-  <h1>This is the index page</h1>
+  <h1>Index page</h1>
 {% endblock %}
